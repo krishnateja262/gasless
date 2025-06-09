@@ -1,0 +1,190 @@
+test_chains:
+    - name: polygon_mumbai
+      chainid: 80001
+      gastracker: https://gpoly.blockscan.com/gasapi.ashx?apikey=key&method=gasoracle
+      rpc_provider: https://rpc.ankr.com/polygon_mumbai
+      0x_base_url: https://polygon.api.0x.org
+      transaction_queue: polygon-mumbai-transactions
+      transfer_queue: polygon-mumbai-transfers
+      swap_queue: polygon-mumbai-swaps
+      order_status_queue: onramp-order-status
+      off_ramp_blockchain_status_queue: polygon-mumbai-offramp-blockchain
+      enc_key: ENCRYPTION_KEY_137
+      dexes: []
+      listen_port: 3002
+      block_explorer: https://mumbai.polygonscan.com
+      native_token: MATIC
+      native_token_address: 0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+      native_token_decimals: 18
+      is_legacy: false # if true, then the transaction created to be sent will be legacy without EIP1559
+      max_receipt_retries: 20 # will retry max 20 times to get receipt
+    - name: base_sepolia
+      chainid: 84532
+      gastracker: 
+      rpc_provider: https://sepolia.base.org
+      0x_base_url: 
+      transaction_queue: sepolia-base-transactions
+      transfer_queue: sepolia-base-transfers
+      swap_queue: sepolia-base-swaps
+      order_status_queue: onramp-order-status
+      off_ramp_blockchain_status_queue: sepolia-base-offramp-blockchain
+      enc_key: ENCRYPTION_KEY_56
+      dexes: []
+      listen_port: 3002
+      block_explorer: https://sepolia.basescan.org
+      native_token: ETH
+      native_token_address: 0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+      native_token_decimals: 18
+      is_legacy: false
+      max_receipt_retries: 20 # will retry max 20 times to get receipt
+prod_chains:
+    - name: polygon
+      chainid: 137
+      gastracker: https://gpoly.blockscan.com/gasapi.ashx?apikey=key&method=gasoracle
+      rpc_provider: https://polygon-rpc.com
+      0x_base_url: https://polygon.api.0x.org
+      uniswap_graph_url: https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v3-polygon
+      transaction_queue: polygon-transactions
+      transfer_queue: polygon-transfers
+      swap_queue: polygon-swaps
+      order_status_queue: onramp-order-status
+      off_ramp_blockchain_status_queue: polygon-offramp-blockchain
+      enc_key: ENCRYPTION_KEY_137
+      dexes:
+        - 0x
+        - 1inch
+      listen_port: 3137
+      block_explorer: https://polygonscan.com
+      native_token: MATIC
+      native_token_address: 0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+      native_token_decimals: 18
+      is_legacy: false
+      max_receipt_retries: 60 # will retry max 20 times to get receipt
+    - name: base
+      chainid: 8453
+      gastracker: https://gbsc.blockscan.com/gasapi.ashx?apikey=key&method=gasoracle
+      rpc_provider: https://base-mainnet.g.alchemy.com/v2/02d2x1r8G2s-23S5ULWLltqzY9G1sa4F
+      0x_base_url: https://base.api.0x.org
+      transaction_queue: base-transactions
+      transfer_queue: base-transfers
+      swap_queue: base-swaps
+      order_status_queue: onramp-order-status
+      off_ramp_blockchain_status_queue: base-offramp-blockchain
+      enc_key: ENCRYPTION_KEY_137
+      dexes:
+        - 0x
+        - 1inch
+        - Uniswap_V3
+      listen_port: 3453
+      block_explorer: https://basescan.org/
+      native_token: ETH
+      native_token_address: 0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+      native_token_decimals: 18
+      is_legacy: false
+      max_receipt_retries: 40 # will retry max 20 times to get receipt
+    - name: bsc
+      chainid: 56
+      gastracker: https://gbsc.blockscan.com/gasapi.ashx?apikey=key&method=gasoracle
+      rpc_provider: https://bsc-rpc.publicnode.com
+      0x_base_url: https://bsc.api.0x.org
+      transaction_queue: bsc-transactions
+      transfer_queue: bsc-transfers
+      swap_queue: bsc-swaps
+      order_status_queue: onramp-order-status
+      off_ramp_blockchain_status_queue: bsc-offramp-blockchain
+      enc_key: ENCRYPTION_KEY_56
+      dexes:
+        - 0x
+        - 1inch
+      listen_port: 3056
+      block_explorer: https://bscscan.com
+      native_token: BNB
+      native_token_address: 0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+      native_token_decimals: 18
+      is_legacy: true
+      max_receipt_retries: 40 # will retry max 20 times to get receipt
+    - name: ethereum
+      chainid: 1
+      gastracker: https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=BE9RNE4GT6V8MA824714D7D3BYJPIPQHE6
+      rpc_provider: https://eth-mainnet.public.blastapi.io
+      0x_base_url: https://api.0x.org
+      uniswap_graph_url: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3
+      transaction_queue: ethereum-transactions
+      transfer_queue: ethereum-transfers
+      swap_queue: ethereum-swaps
+      order_status_queue: onramp-order-status
+      enc_key: ENCRYPTION_KEY_56
+      dexes:
+        - 0x
+        - 1inch
+        - Uniswap_V3
+        - Uniswap_V2
+      listen_port: 3001
+      block_explorer: https://etherscan.io
+      native_token: ETH
+      native_token_address: 0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+      native_token_decimals: 18
+      is_legacy: false
+      max_receipt_retries: 120 # will retry max 20 times to get receipt
+    - name: arbitrum_one
+      chainid: 42161
+      gastracker: https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=BE9RNE4GT6V8MA824714D7D3BYJPIPQHE6
+      rpc_provider: https://arb-mainnet.g.alchemy.com/v2/HiVIHYF2eENLGX40Eqvo8fmubAktunln
+      0x_base_url: https://arbitrum.api.0x.org
+      uniswap_graph_url: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3
+      transaction_queue: arbitrum-transactions
+      transfer_queue: arbitrum-transfers
+      swap_queue: arbitrum-swaps
+      order_status_queue: onramp-order-status
+      off_ramp_blockchain_status_queue: arbitrum-offramp-blockchain
+      enc_key: ENCRYPTION_KEY_42161
+      dexes:
+        - 0x
+        - 1inch
+        - Uniswap_V3
+      listen_port: 3161
+      block_explorer: https://arbiscan.io/
+      native_token: ETH
+      native_token_address: 0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+      native_token_decimals: 18
+      is_legacy: false
+      max_receipt_retries: 40 # will retry max 20 times to get receipt
+    - name: ronin
+      chainid: 2020
+      rpc_provider: https://api-gateway.skymavis.com/rpc?apikey=adcEyfYEn9MHOeNTFIK1QfvAjJji84ww
+      transaction_queue: ronin-transactions
+      transfer_queue: ronin-transfers
+      swap_queue: ronin-swaps
+      order_status_queue: onramp-order-status
+      off_ramp_blockchain_status_queue: ronin-offramp-blockchain
+      enc_key: ENCRYPTION_KEY_137
+      dexes:
+        - Katana
+      listen_port: 3220
+      block_explorer: https://app.roninchain.com
+      native_token: RON
+      native_token_address: 0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+      native_token_decimals: 18
+      is_legacy: false
+      max_receipt_retries: 40 # will retry max 20 times to get receipt
+    - name: dfk_Mainnet
+      chainid: 53935
+      gastracker: https://avascan.info/react-api/network/1/blockchain/q2aTwKuyzgs8pynF7UXBZCU7DejbZbZ6EUyHr3JQzYgwNPUPi/gas/price?currency=usd
+      rpc_provider: https://subnets.avax.network/defi-kingdoms/dfk-chain/rpc
+      0x_base_url: https://polygon.api.0x.org
+      uniswap_graph_url: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
+      transaction_queue: dfk_chain-transactions
+      transfer_queue: dfk_chain-transfers
+      swap_queue: dfk_chain-swaps
+      order_status_queue: dfk_chain-order-status
+      off_ramp_blockchain_status_queue: dfk_chain-offramp-blockchain
+      enc_key: ENCRYPTION_KEY_56
+      dexes:
+        - Uniswap_V2
+      listen_port: 3035
+      block_explorer: https://subnets.avax.network/defi-kingdoms/
+      native_token: JEWEL
+      native_token_address: 0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+      native_token_decimals: 18
+      is_legacy: false
+      max_receipt_retries: 20 # will retry max 20 times to get receipt
